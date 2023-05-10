@@ -1,0 +1,270 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  font-size: inherit;
+  text-align: center;
+  border: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: 1px;
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 90%;
+  width: 998px;
+}
+
+.flex {
+  display: flex;
+  height: 100%;
+}
+
+.flex--spaceBetween {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  background-color: #259bc1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo__img {
+  height: 18px;
+  width: 16px;
+}
+
+.logo__text {
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+  color: #fff;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  gap: 20px;
+}
+
+.filters__text {
+  color: #ffffff80;
+}
+
+.filters__button {
+  color: #ffffff80;
+}
+
+.filters__button--active {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #25a8d4;
+}
+
+.actionBar {
+  background-color: #23282d09;
+  height: 68px;
+}
+
+.search {
+  position: relative;
+}
+
+.search__input {
+  width: 231px;
+  height: 32px;
+  font-size: inherit;
+  padding: 8px 8px 8px 32px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.search__input::placeholder {
+  color: #c7c9cd;
+}
+
+.search__icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.createBtn {
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  background-color: #8dc63f;
+  width: 161px;
+}
+
+@media (max-width: 500px) {
+  .header {
+    height: unset;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .flex {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  .actionBar {
+    height: unset;
+  }
+}
+
+.table__wrapper {
+  width: 90%;
+  max-width: 998px;
+  margin-inline: auto;
+}
+
+.table {
+  font-size: 0.875rem;
+  color: #7b7d80;
+  border-spacing: 0;
+  border-bottom: 1px solid #e5e5e5;
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+}
+
+.table__data,
+.table__header {
+  padding: 16px 8px;
+  text-align: start;
+}
+
+.table__header {
+  font-weight: 400;
+  color: #aaacaf;
+}
+
+table .table__header:first-of-type {
+  width: 100px;
+}
+
+table .table__header:nth-of-type(2) {
+  width: 200px;
+}
+
+.table__data {
+  border-top: 1px solid #e5e5e5;
+  table-layout: fixed;
+}
+
+.table__data--bold {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #000;
+}
+
+.table__error,
+.table__empty {
+  margin: 15px 0;
+}
+
+.table__error {
+  color: #da1b1b;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.skeleton {
+  min-height: 49px;
+  background: #eee;
+  background: linear-gradient(110deg, #e5e5e5 8%, #f5f5f5 18%, #e5e5e5 33%);
+  background-size: 200% 100%;
+  margin-bottom: 1px;
+  animation: 1.5s shine linear infinite;
+}
+
+@media screen and (max-width: 650px) {
+  .table__head {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+  }
+
+  .table__row {
+    display: block;
+  }
+
+  .table__row:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .table__data:first-of-type {
+    border-top: none;
+  }
+
+  .table__data {
+    display: block;
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .table__data:first-of-type:before {
+    content: "ID";
+    float: left;
+    color: #aaacaf;
+  }
+
+  .table__data:nth-of-type(2):before {
+    content: "Company Name";
+    float: left;
+    color: #aaacaf;
+  }
+
+  .table__data:nth-of-type(3):before {
+    content: "Owner Email";
+    float: left;
+    color: #aaacaf;
+  }
+}
